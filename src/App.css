@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .box {
   max-width: 1280px;
   width: 100%;
@@ -41,15 +42,15 @@
   z-index: 3;
 }
 
-.main::before {
+/* .main::before {
   animation-delay: 4s !important;
-}
+} */
 
 .blob2 {
   visibility: hidden;
 }
 
-.main::before,
+/* .main::before,
 .main::after {
   position: absolute;
   content: "";
@@ -77,7 +78,7 @@
   75% {
     clip: rect(0px, 715px, 715px, 715px);
   }
-}
+} */
 
 .main__blob {
   display: block;
@@ -86,13 +87,6 @@
   right: 0;
   z-index: 2;
 }
-
-/* .main__waves {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-} */
 
 .blobImg {
   object-fit: cover;

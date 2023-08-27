@@ -3,88 +3,13 @@ import "./App.css";
 import Question from "./components/Question/Question";
 import KUTE from "kute.js";
 import Result from "./components/Result/Result";
+import questions from "./questions";
 
 function App() {
-  const [questions, setQuestion] = useState([
-    {
-      id: 0,
-      question: "В каком году была выпущена Лига легенд?",
-      answers: ["2006", "2008", "2009", "2011"],
-      correct: 2,
-    },
-    {
-      id: 1,
-      question: "В какой игре средний онлайн игроков больше?",
-      answers: ["Дота 2", "Лига Легенд"],
-      correct: 1,
-    },
-    {
-      id: 2,
-      question: "Сколько длилась самая долгая официальная игра в Лиге Легенд?",
-      answers: [
-        "от 70 до 80 минут",
-        "от 81 до 90 минут",
-        "от 91 до 100 минут",
-        "более 101 минут",
-      ],
-      correct: 2,
-    },
-    {
-      id: 3,
-      question: "Сколько вышло чемпионов на данный момент?",
-      answers: ["161", "163", "164", "166"],
-      correct: 2,
-    },
-    {
-      id: 4,
-      question: "Сколько существует территорий в мире Лиги Легенд?",
-      answers: ["8", "10", "11", "13"],
-      correct: 3,
-    },
-    {
-      id: 5,
-      question: "С какой территории чемпион Мальфит?",
-      answers: ["Ишталь", "Иония", "Димасия", "Таргон"],
-      correct: 0,
-    },
-    {
-      id: 6,
-      question: "С какой территории чемпион Ког'Мао?",
-      answers: ["Иония", "Бездна", "Сумрачные острова", "Таргон"],
-      correct: 1,
-    },
-    {
-      id: 7,
-      question:
-        "Самый популярный (высокий пикрейт) чемпион Лиги Легенд на данный момент?(согласно статистике на League of Graphs)",
-      answers: ["Кайса", "Ясуо", "Люкс", "Наафири"],
-      correct: 0,
-    },
-    {
-      id: 8,
-      question:
-        "Наименее популярный (низкий пикрейт) чемпион Лиги Легенд на данный момент?(согласно статистике на League of Graphs)",
-      answers: ["Иверн", "Скарнер", "Тарик", "Юми"],
-      correct: 1,
-    },
-    {
-      id: 9,
-      question:
-        "Чемпион с самым высоким банрейтом на данный момент?(согласно статистике на League of Graphs)",
-      answers: ["Ясуо", "Зед", "Наафири", "Шако"],
-      correct: 2,
-    },
-    {
-      id: 10,
-      question:
-        "На каком герое больше всего делают пентакилл в играх?(согласно статистике на League of Graphs)",
-      answers: ["Самира", "Катарина", "Мастер Йи", "Кассадин"],
-      correct: 0,
-    },
-  ]);
   const [step, setStep] = useState(0);
   const [correct, setCorrect] = useState(0);
   const question = questions[step];
+  const count = questions.length;
   console.log(question);
 
   function onClickAnswer(index) {
@@ -111,7 +36,12 @@ function App() {
     <div className="main-container">
       <main className="main">
         {step !== questions.length ? (
-          <Question question={question} onClickAnswer={onClickAnswer} />
+          <Question
+            question={question}
+            onClickAnswer={onClickAnswer}
+            step={step}
+            count={count}
+          />
         ) : (
           <Result
             length={questions.length}
