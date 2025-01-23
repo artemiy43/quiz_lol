@@ -25,8 +25,8 @@ const questions = [
   {
     id: 3,
     question: "Сколько вышло чемпионов на данный момент?",
-    answers: ["161", "163", "164", "166"],
-    correct: 2,
+    answers: ["161", "163", "164", "168"],
+    correct: 3,
   },
   {
     id: 4,
@@ -49,29 +49,27 @@ const questions = [
   {
     id: 7,
     question:
-      "Самый популярный (высокий пикрейт) чемпион Лиги Легенд на данный момент?(согласно статистике на League of Graphs)",
-    answers: ["Кайса", "Ясуо", "Люкс", "Наафири"],
+      "Какая команда выиграла the League of Legends World Championship 2024 (так же известный как LoL Worlds 2024 или just Worlds 2024)?",
+    answers: ["T1", "Weibo Gaming", "Bilibili Gaming", "JD Gaming"],
     correct: 0,
   },
   {
     id: 8,
-    question:
-      "Наименее популярный (низкий пикрейт) чемпион Лиги Легенд на данный момент?(согласно статистике на League of Graphs)",
-    answers: ["Иверн", "Скарнер", "Тарик", "Юми"],
+    question: "Какой ник у этого стримера по лиги легенд?",
+    answers: ["Thebausffs", "Tyler1", "Nemesis", "Jankos"],
     correct: 1,
+    img: "https://win.gg/wp-content/uploads/2022/06/tyler1-reformed.webp",
   },
   {
     id: 9,
-    question:
-      "Чемпион с самым высоким банрейтом на данный момент?(согласно статистике на League of Graphs)",
-    answers: ["Ясуо", "Зед", "Наафири", "Шако"],
+    question: "Кто является императором Шуримы?",
+    answers: ["Renekton", "K'Sante", "Azir", "Amumu"],
     correct: 2,
   },
   {
     id: 10,
-    question:
-      "На каком герое больше всего делают пентакилл в играх?(согласно статистике на League of Graphs)",
-    answers: ["Самира", "Катарина", "Мастер Йи", "Кассадин"],
+    question: "Кто является братом Орна?",
+    answers: ["Volibir", "Braum", "Gnar", "Olaf"],
     correct: 0,
   },
 ];

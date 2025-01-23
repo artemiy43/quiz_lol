@@ -80,3 +80,10 @@
   top: 10px;
   font-weight: 700;
 }
+
+.question_img {
+  width: 200px;
+  height: 200px;
+  object-position: center;
+  object-fit: cover;
+}

@@ -4,13 +4,14 @@ import Question from "./components/Question/Question";
 import KUTE from "kute.js";
 import Result from "./components/Result/Result";
 import questions from "./questions";
+import questionsEng from "./questions_eng";
 
 function App() {
   const [step, setStep] = useState(0);
   const [correct, setCorrect] = useState(0);
-  const question = questions[step];
+  const [languageRu, setLanguage] = useState(true);
+  const question = languageRu ? questions[step] : questionsEng[step];
   const count = questions.length;
-  console.log(question);
 
   function onClickAnswer(index) {
     setStep(step + 1);
@@ -23,6 +24,10 @@ function App() {
     setCorrect(0);
   }
 
+  function toggleLanguage() {
+    setLanguage((language) => !language);
+  }
+
   useEffect(() => {
     const tween = KUTE.fromTo(
       "#blob1",
@@ -33,8 +38,11 @@ function App() {
   });
 
   return (
-    <div className="main-container">
-      <main className="main">
+    <main className="main-container">
+      <div className="main">
+        <button className="main_language" onClick={toggleLanguage}>
+          {languageRu ? "ru" : "eng"}
+        </button>
         {step !== questions.length ? (
           <Question
             question={question}
@@ -49,7 +57,7 @@ function App() {
             setStep={restart}
           />
         )}
-      </main>
+      </div>
       <svg
         id="visual"
         viewBox="0 0 900 600"
@@ -84,7 +92,7 @@ function App() {
           ></path>
         </g>
       </svg>
-    </div>
+    </main>
   );
 }
 
